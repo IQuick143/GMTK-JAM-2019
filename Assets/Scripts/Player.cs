@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour {
 	//Movement data
 	public float MaxSpeed = 2.75f;
@@ -15,9 +16,16 @@ public class Player : MonoBehaviour {
 	public float MaxMouseDist = 1f;
 	public float DistanceAccel = 0;
 
+	//Values for rotation
+	public float FacingRightAngle = 91;
+	public float FacingLeftAngle  = 269;
+	public float RotationTime = 0.25f;
+
 	//Assignable variables
 	[SerializeField]
 	private Camera mainCamera;
+	[SerializeField]
+	private Animator charAnimator;
 
     //Variables
     private float speed = 0f;
@@ -30,14 +38,15 @@ public class Player : MonoBehaviour {
 	private bool braking = false;
 	private bool facingRight = true;
 
+	//For rotating the character
+	private float characterRotation = 1f;
+
 	void Start() {
         DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
         rb = GetComponent<Rigidbody2D>();
     }
 
 	void Update() {
-		//TODO: Change this line when we all agree on the constants
-		DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
 		//Figure out a correct target speed
 		if (GetMouseDown()) {
 			float mouseDeltaX = GetMousePosition();
@@ -56,12 +65,14 @@ public class Player : MonoBehaviour {
 		} else {
 			this.targetSpeed = 0;
 		}
+
+		this.charAnimator.SetBool("Running", this.walking);
 	}
 
 	void FixedUpdate() {
-        speed = rb.velocity.x;
+        this.speed = rb.velocity.x;
 
-		if (this.targetSpeed != speed) {
+		if (this.targetSpeed != this.speed) {
 			float accel = 0f;
 
 			int signReal = (int) Mathf.Sign(this.speed);
@@ -85,12 +96,21 @@ public class Player : MonoBehaviour {
 
 			if (this.speed < 0) this.facingRight = false;
 			if (this.speed > 0) this.facingRight = true;
-			this.walking = this.speed != 0;
-			this.turning = !(signTarget == 0 || signReal == signTarget);
 		} else {
 			this.braking = false;
 		}
+
+		this.walking = Mathf.Abs(this.speed) > 0.05f;
+		this.turning = this.walking && Mathf.Sign(this.speed) != Mathf.Sign(this.targetSpeed) && Mathf.Sign(this.targetSpeed) != 0;
+
         rb.velocity = new Vector2(speed, rb.velocity.y);
+
+		//Rotate character
+		if (!((this.characterRotation == 1 && this.facingRight) || (this.characterRotation == 0 && !this.facingRight))) {
+			this.charAnimator.transform.rotation = Quaternion.Euler(0, Mathf.LerpAngle(FacingLeftAngle, FacingRightAngle, characterRotation), 0);
+			this.characterRotation += Time.fixedDeltaTime / RotationTime * (this.facingRight?1:-1);
+			this.characterRotation = Mathf.Clamp01(this.characterRotation);
+		}
 	}
 
 	//These two methods are for easy portability and input bug fixing
