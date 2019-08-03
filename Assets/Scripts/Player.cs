@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 	//Movement data
 	public float MaxSpeed = 2.75f;
+	public float MinSpeed = 0.125f;
 	public float Acceleration = 5.75f;
 	public float Deceleration = 7.5f;
 
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour {
 	//Min distance to start counting as movement
 	public float MinMouseDist = 0.1f;
 	//When to consider the mouse to be so far, we need to reach max speed
-	public float MaxMouseDist = 1f;
+	public float MaxMouseDist = 1.5f;
 	public float DistanceAccel = 0;
 
 	//Values for rotation
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour {
 				this.targetSpeed = 0;
 			} else {
 				if (absMouseDeltaX < MaxMouseDist) {
-					this.targetSpeed = (absMouseDeltaX - MinMouseDist) * DistanceAccel;
+					this.targetSpeed = Mathf.Max(MinSpeed, (absMouseDeltaX - MinMouseDist) * DistanceAccel);
 				} else {
 					this.targetSpeed = MaxSpeed;
 				}
@@ -71,7 +72,7 @@ public class Player : MonoBehaviour {
 			this.targetSpeed = 0;
 		}
 
-		this.charAnimator.SetBool("Running", this.walking);
+		this.charAnimator.SetFloat("Speed", Mathf.Abs(this.speed) / MaxSpeed);
 	}
 
 	void FixedUpdate() {
