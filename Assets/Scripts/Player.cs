@@ -19,12 +19,14 @@ public class Player : MonoBehaviour {
 	[SerializeField]
 	private Camera mainCamera;
 
-	//Variables
-	private float speed = 0f;
-	private float targetSpeed = 0f;
+    //Variables
+    private float speed = 0f;
+    private float targetSpeed = 0f;
+    private Rigidbody2D rb;
 
 	void Start() {
         DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
+        rb = GetComponent<Rigidbody2D>();
     }
 
 	void Update() {
@@ -51,10 +53,12 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (this.targetSpeed != this.speed) {
+        speed = rb.velocity.x;
+
+		if (this.targetSpeed != speed) {
 			float accel = 0f;
-			int signReal = (int) Mathf.Sign(this.speed);
-			if (this.speed == 0) signReal *= 0;
+			int signReal = (int) Mathf.Sign(speed);
+			if (speed == 0) signReal *= 0;
 			int signTarget = (int) Mathf.Sign(this.targetSpeed);
 			if (this.targetSpeed == 0) signTarget *= 0;
 			if (signReal == 0 || signReal == signTarget) {
@@ -63,14 +67,14 @@ public class Player : MonoBehaviour {
 				accel = Deceleration;
 			}
 			float deltaV = accel * Time.fixedDeltaTime;
-			if (Mathf.Abs(this.targetSpeed - this.speed) < deltaV) {
-				this.speed = this.targetSpeed;
+			if (Mathf.Abs(this.targetSpeed - speed) < deltaV) {
+                speed = this.targetSpeed;
 			} else {
-				int accelDirection = (int) Mathf.Sign(this.targetSpeed - this.speed);
-				this.speed += accelDirection * deltaV;
+				int accelDirection = (int) Mathf.Sign(this.targetSpeed - speed);
+                speed += accelDirection * deltaV;
 			}
 		}
-		this.transform.position += Vector3.right * this.speed * Time.fixedDeltaTime;
+        rb.velocity = new Vector2(speed, rb.velocity.y);
 	}
 
 	//These two methods are for easy portability and input bug fixing
