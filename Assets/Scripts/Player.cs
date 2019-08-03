@@ -24,6 +24,12 @@ public class Player : MonoBehaviour {
     private float targetSpeed = 0f;
     private Rigidbody2D rb;
 
+	//Booleans probably used mainly for animation
+	private bool walking = false;
+	private bool turning = false;
+	private bool braking = false;
+	private bool facingRight = true;
+
 	void Start() {
         DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
         rb = GetComponent<Rigidbody2D>();
@@ -57,14 +63,17 @@ public class Player : MonoBehaviour {
 
 		if (this.targetSpeed != speed) {
 			float accel = 0f;
-			int signReal = (int) Mathf.Sign(speed);
-			if (speed == 0) signReal *= 0;
+
+			int signReal = (int) Mathf.Sign(this.speed);
+			if (this.speed == 0) signReal *= 0;
 			int signTarget = (int) Mathf.Sign(this.targetSpeed);
 			if (this.targetSpeed == 0) signTarget *= 0;
-			if (signReal == 0 || signReal == signTarget) {
-				accel = Acceleration;
-			} else {
+
+			this.braking = !(signReal == 0 || signReal == signTarget);
+			if (braking) {
 				accel = Deceleration;
+			} else {
+				accel = Acceleration;
 			}
 			float deltaV = accel * Time.fixedDeltaTime;
 			if (Mathf.Abs(this.targetSpeed - speed) < deltaV) {
@@ -73,6 +82,13 @@ public class Player : MonoBehaviour {
 				int accelDirection = (int) Mathf.Sign(this.targetSpeed - speed);
                 speed += accelDirection * deltaV;
 			}
+
+			if (this.speed < 0) this.facingRight = false;
+			if (this.speed > 0) this.facingRight = true;
+			this.walking = this.speed != 0;
+			this.turning = !(signTarget == 0 || signReal == signTarget);
+		} else {
+			this.braking = false;
 		}
         rb.velocity = new Vector2(speed, rb.velocity.y);
 	}
