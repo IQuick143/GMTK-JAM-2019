@@ -118,7 +118,7 @@ public class Player : MonoBehaviour {
 			this.characterRotation = Mathf.Clamp01(this.characterRotation);
 		}
 
-        CheckIsOnGround();
+        CheckIsOnMovingPlatform();
 	}
 
 	//These two methods are for easy portability and input bug fixing
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position + groundOffset, groundCircleRadius);
     }
 
-    private void CheckIsOnGround() {
+    private void CheckIsOnMovingPlatform() {
         Collider2D col = Physics2D.OverlapCircle(transform.position + groundOffset, groundCircleRadius, movingPlatformMask);
         if (col != null && transform.parent != col.transform) {
             transform.SetParent(col.transform);
