@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
 	void Update() {
 		//TODO: Change this line when we all agree on the constants
 		DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
-		/*/Figure out a correct target speed
+		//Figure out a correct target speed
 		if (GetMouseDown()) {
 			float mouseDeltaX = GetMousePosition();
 			float absMouseDeltaX = Mathf.Abs(mouseDeltaX);
@@ -56,7 +56,6 @@ public class Player : MonoBehaviour {
 		} else {
 			this.targetSpeed = 0;
 		}
-		//*/
 	}
 
 	void FixedUpdate() {
@@ -86,8 +85,6 @@ public class Player : MonoBehaviour {
 
 			if (this.speed < 0) this.facingRight = false;
 			if (this.speed > 0) this.facingRight = true;
-			
-			
 		} else {
 			this.braking = false;
 		}
