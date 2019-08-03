@@ -42,6 +42,11 @@ public class Player : MonoBehaviour {
 	//For rotating the character
 	private float characterRotation = 1f;
 
+    //Moving platforms
+    private const float groundCircleRadius = 0.15f;
+    private Vector3 groundOffset = new Vector3(0f, 0f, 0f);
+    public LayerMask movingPlatformMask;
+
 	void Start() {
         DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
         rb = GetComponent<Rigidbody2D>();
@@ -112,6 +117,8 @@ public class Player : MonoBehaviour {
 			this.characterRotation += Time.fixedDeltaTime / RotationTime * (this.facingRight?1:-1);
 			this.characterRotation = Mathf.Clamp01(this.characterRotation);
 		}
+
+        CheckIsOnGround();
 	}
 
 	//These two methods are for easy portability and input bug fixing
@@ -123,4 +130,19 @@ public class Player : MonoBehaviour {
 	bool GetMouseDown() {
 		return Input.GetMouseButton(0);
 	}
+
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + groundOffset, groundCircleRadius);
+    }
+
+    private void CheckIsOnGround() {
+        Collider2D col = Physics2D.OverlapCircle(transform.position + groundOffset, groundCircleRadius, movingPlatformMask);
+        if (col != null && transform.parent != col.transform) {
+            transform.SetParent(col.transform);
+        }
+        if (col == null && transform.parent != null) {
+            transform.parent = null;
+        }
+    }
 }
