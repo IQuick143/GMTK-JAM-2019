@@ -24,8 +24,8 @@ public class Player : MonoBehaviour {
 	private float targetSpeed = 0f;
 
 	void Start() {
-		
-	}
+        DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
+    }
 
 	void Update() {
 		//TODO: Change this line when we all agree on the constants
