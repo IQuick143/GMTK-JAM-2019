@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 	//Movement data
-	const float MaxSpeed = 2f;
-	const float Acceleration = 5f;
-	const float Deceleration = 6f;
+	public float MaxSpeed = 2.75f;
+	public float Acceleration = 5.75f;
+	public float Deceleration = 7.5f;
 
 	//Mouse control data
 	//Min distance to start counting as movement
-	const float MinMouseDist = 0.1f;
+	public float MinMouseDist = 0.1f;
 	//When to consider the mouse to be so far, we need to reach max speed
-	const float MaxMouseDist = 1f;
-	const float DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
+	public float MaxMouseDist = 1f;
+	public float DistanceAccel = 0;
 
 	//Assignable variables
 	[SerializeField]
 	private Camera mainCamera;
 
-	//variables
-	[SerializeField]
+	//Variables
 	private float speed = 0f;
-	[SerializeField]
 	private float targetSpeed = 0f;
 
 	void Start() {
@@ -30,6 +28,8 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
+		//TODO: Change this line when we all agree on the constants
+		DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
 		//Figure out a correct target speed
 		if (GetMouseDown()) {
 			float mouseDeltaX = GetMousePosition();
