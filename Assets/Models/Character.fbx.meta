@@ -4,14 +4,17 @@ ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
-      74: 4084113550970173757
-    second: Armature|Armature|Armature|idle|Armature|idle
+      74: -9146183740671002596
+    second: idle
   - first:
-      74: 7514334435040930725
-    second: Armature|Armature|Armature|run / jog|Armature|run / jog
+      74: 6535219183252133006
+    second: run / jog
   - first:
-      74: 5863491764154815518
-    second: Armature|Armature|Armature|run|Armature|run
+      74: 8850388464237123660
+    second: falling
+  - first:
+      74: -2853757328894756258
+    second: landing
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,9 +44,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Armature|Armature|idle|Armature|idle
-      takeName: Armature|Armature|Armature|idle|Armature|idle
-      internalID: 4084113550970173757
+      name: idle
+      takeName: Armature|Armature|Armature|Armature|Armature|Armature|Armature|idle|.000
+      internalID: -9146183740671002596
       firstFrame: 0
       lastFrame: 63
       wrapMode: 0
@@ -70,9 +73,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Armature|Armature|run / jog|Armature|run / jog
-      takeName: Armature|Armature|Armature|run / jog|Armature|run / jog
-      internalID: 7514334435040930725
+      name: run / jog
+      takeName: Armature|Armature|Armature|Armature|Armature|Armature|Armature|run
+        / jog
+      internalID: 6535219183252133006
       firstFrame: 0
       lastFrame: 23
       wrapMode: 0
@@ -98,6 +102,64 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: falling
+      takeName: Armature|Armature|Armature|falling|Armature|falling
+      internalID: 8850388464237123660
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: landing
+      takeName: Armature|Armature|Armature|landing|Armature|landing
+      internalID: -2853757328894756258
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -107,8 +169,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1

@@ -34,6 +34,7 @@ public class Player : MonoBehaviour {
     private Rigidbody2D rb;
 
 	//Booleans probably used mainly for animation
+	private bool falling = false;
 	private bool walking = false;
 	private bool turning = false;
 	private bool braking = false;
@@ -73,10 +74,12 @@ public class Player : MonoBehaviour {
 		}
 
 		this.charAnimator.SetFloat("Speed", Mathf.Abs(this.speed) / MaxSpeed);
+		this.charAnimator.SetBool("Falling", this.falling);
 	}
 
 	void FixedUpdate() {
         this.speed = rb.velocity.x;
+		this.falling = rb.velocity.y < -2.5f;
 
 		if (this.targetSpeed != this.speed) {
 			float accel = 0f;
@@ -89,6 +92,7 @@ public class Player : MonoBehaviour {
 			this.braking = !(signReal == 0 || signReal == signTarget);
 			if (braking) {
 				accel = Deceleration;
+				if (this.falling) accel /= 4f;
 			} else {
 				accel = Acceleration;
 			}
