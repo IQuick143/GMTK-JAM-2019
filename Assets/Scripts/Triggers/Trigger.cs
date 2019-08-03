@@ -4,7 +4,12 @@ using UnityEngine;
 public abstract class Trigger : MonoBehaviour {
 	protected List<Actuator> triggeredActuators;
 	private bool _active = false;
-	public bool active {
+
+    private void Awake() {
+        triggeredActuators = new List<Actuator>();
+    }
+
+    public bool active {
 		protected set {
 			if (_active != value) {
 				_active = value;
