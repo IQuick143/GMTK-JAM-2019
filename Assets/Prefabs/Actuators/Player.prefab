@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSpeed: 3
+  MinSpeed: 0.125
   Acceleration: 10
   Deceleration: 12
   MinMouseDist: 0.1
@@ -740,7 +741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5756847025997881906}
   m_LocalRotation: {x: 0, y: 0.81915206, z: 0, w: 0.57357645}
-  m_LocalPosition: {x: 0, y: 0.06, z: 0}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 0.69, y: 0.69, z: 0.69}
   m_Children:
   - {fileID: 4976827924312808367}
@@ -757,7 +758,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5756847025997881906}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f61d2189b99479b4a85da1c7fdb99296, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 5cb7c762814050e47a79ca3efd17b17c, type: 3}
   m_Controller: {fileID: 9100000, guid: febc820ef60e6a147936684085873d23, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -931,7 +932,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -1550514412580984892, guid: f61d2189b99479b4a85da1c7fdb99296, type: 3}
+  m_Mesh: {fileID: -1550514412580984892, guid: 5cb7c762814050e47a79ca3efd17b17c, type: 3}
   m_Bones:
   - {fileID: 5065325518888512918}
   - {fileID: 7920671036159835465}
