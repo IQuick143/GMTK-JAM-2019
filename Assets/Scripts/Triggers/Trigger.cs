@@ -5,7 +5,7 @@ public abstract class Trigger : MonoBehaviour {
 	protected List<Actuator> triggeredActuators;
 	private bool _active = false;
 
-    private void Awake() {
+    public void Awake() {
         triggeredActuators = new List<Actuator>();
     }
 
