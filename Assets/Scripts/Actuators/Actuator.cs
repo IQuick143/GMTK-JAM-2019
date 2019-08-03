@@ -4,7 +4,7 @@ public abstract class Actuator : MonoBehaviour {
 	[SerializeField]
 	protected Trigger trigger;
 
-	void Awake() {
+	void Start() {
 		this.trigger.AddActuator(this);
 	}
 
