@@ -23,7 +23,6 @@ public class Player : MonoBehaviour {
 	public float RotationTime = 0.25f;
 
 	//Assignable variables
-	[SerializeField]
 	private Camera mainCamera;
 	[SerializeField]
 	private Animator charAnimator;
@@ -48,6 +47,7 @@ public class Player : MonoBehaviour {
     public LayerMask movingPlatformMask;
 
 	void Start() {
+        mainCamera = Camera.main;
         DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
         rb = GetComponent<Rigidbody2D>();
     }
