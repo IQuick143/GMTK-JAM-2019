@@ -8,14 +8,20 @@ public class Lever : Trigger
     //Leaver on the left -> inactive (30 º)
 
     bool movingLeaver = false;
+    public bool startActive = false;
     private float rightAngle = -30f;
     private float leftAngle = 30f;
     public float turningSpeed = 250f;
-    private float rotation = 30;
+    private float rotation = 30;//Same as leftAngle
     private Transform leaverModel;
 
     private void Start() {
         leaverModel = transform.Find("Model");
+        if (startActive) {
+            active = true;
+            leaverModel.rotation = Quaternion.Euler(0f, 0f, rightAngle);
+            rotation = rightAngle;
+        }
     }
 
     void Update() {
