@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
 	void Update() {
 		//TODO: Change this line when we all agree on the constants
 		DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
-		//Figure out a correct target speed
+		/*/Figure out a correct target speed
 		if (GetMouseDown()) {
 			float mouseDeltaX = GetMousePosition();
 			float absMouseDeltaX = Mathf.Abs(mouseDeltaX);
@@ -56,12 +56,13 @@ public class Player : MonoBehaviour {
 		} else {
 			this.targetSpeed = 0;
 		}
+		//*/
 	}
 
 	void FixedUpdate() {
-        speed = rb.velocity.x;
+        this.speed = rb.velocity.x;
 
-		if (this.targetSpeed != speed) {
+		if (this.targetSpeed != this.speed) {
 			float accel = 0f;
 
 			int signReal = (int) Mathf.Sign(this.speed);
@@ -85,11 +86,15 @@ public class Player : MonoBehaviour {
 
 			if (this.speed < 0) this.facingRight = false;
 			if (this.speed > 0) this.facingRight = true;
-			this.walking = this.speed != 0;
-			this.turning = !(signTarget == 0 || signReal == signTarget);
+			
+			
 		} else {
 			this.braking = false;
 		}
+
+		this.walking = Mathf.Abs(this.speed) > 0.05f;
+		this.turning = this.walking && Mathf.Sign(this.speed) != Mathf.Sign(this.targetSpeed) && Mathf.Sign(this.targetSpeed) != 0;
+
         rb.velocity = new Vector2(speed, rb.velocity.y);
 	}
 
