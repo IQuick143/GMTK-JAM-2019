@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Leaver : Trigger
+public class Lever : Trigger
 {
     //Leaver on the right -> active (-30 º)
     //Leaver on the left -> inactive (30 º)
