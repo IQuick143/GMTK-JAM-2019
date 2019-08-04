@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641335, b: 0.5748179, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -660,6 +660,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lever
       objectReference: {fileID: 0}
+    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
+        type: 3}
+      propertyPath: m_Parameters.m_DragCurve.scalar
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8998169724730907712, guid: 5bc817dee44c73746b0fd5fd3aca4927,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -727,11 +732,6 @@ PrefabInstance:
       propertyPath: wire
       value: 
       objectReference: {fileID: 1754944782}
-    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
-        type: 3}
-      propertyPath: m_Parameters.m_DragCurve.scalar
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
 --- !u!1 &980765328
@@ -917,6 +917,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.12
       objectReference: {fileID: 0}
+    - target: {fileID: 8858526521056743453, guid: cec9ea5db83429c4d82852fefa800d4c,
+        type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 2139675163}
+    - target: {fileID: 8858526521056743453, guid: cec9ea5db83429c4d82852fefa800d4c,
+        type: 3}
+      propertyPath: mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8858526520141989530, guid: cec9ea5db83429c4d82852fefa800d4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -936,16 +946,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8858526521056743453, guid: cec9ea5db83429c4d82852fefa800d4c,
-        type: 3}
-      propertyPath: trigger
-      value: 
-      objectReference: {fileID: 2139675163}
-    - target: {fileID: 8858526521056743453, guid: cec9ea5db83429c4d82852fefa800d4c,
-        type: 3}
-      propertyPath: mode
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cec9ea5db83429c4d82852fefa800d4c, type: 3}
@@ -1064,7 +1064,7 @@ PrefabInstance:
     - target: {fileID: 6511032573753908048, guid: f904c0d9c55a22b459bebb7effa6a234,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6511032573753908048, guid: f904c0d9c55a22b459bebb7effa6a234,
         type: 3}
@@ -1114,17 +1114,17 @@ PrefabInstance:
     - target: {fileID: 6511032573753908048, guid: f904c0d9c55a22b459bebb7effa6a234,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6511032573753908048, guid: f904c0d9c55a22b459bebb7effa6a234,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6511032573753908048, guid: f904c0d9c55a22b459bebb7effa6a234,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f904c0d9c55a22b459bebb7effa6a234, type: 3}
