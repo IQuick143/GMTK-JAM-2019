@@ -15,7 +15,15 @@ public class SceneSwitcher : MonoBehaviour {
 		menu.LevelLoaded(currentSceneID);
 	}
 
-	public static void OnLevelCompleted() {
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetLevel();
+        }
+    }
+
+    public static void OnLevelCompleted() {
 		SceneSwitcher.switcher.StartCoroutine(SceneSwitcher.switcher.LevelCompleted());
 	}
 
