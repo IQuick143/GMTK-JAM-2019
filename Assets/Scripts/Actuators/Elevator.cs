@@ -3,47 +3,75 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Elevator : Actuator {
+	[SerializeField]
+	private ElevatorMode mode = ElevatorMode.Repeating;
+	[SerializeField]
+	private float EndWaitTime = 0.5f;
 
-    public Transform [] points;
-    public float platformSpeed;
+	[SerializeField]
+	private Transform PointA;
+	[SerializeField]
+	private Transform PointB;
+	[SerializeField]
+    private float platformSpeed;
 
     private bool isActive;
-    private int currPointTarget = 0;
-    private Vector3 velocity;
+    private float progress = 0f;
+	private float distance;
+	private int direction = 0;
+	private float waiting = 0f;
 
-    private void Update() {
-        if (isActive) {
-            //If this cycle it will surpass the position of the target point, place it on the target point
-            if (Vector2.Distance(transform.position, points[currPointTarget].position) < velocity.magnitude * Time.deltaTime) {
-                transform.position = points[currPointTarget].position;
-                currPointTarget++;
-                if (currPointTarget == points.Length) {
-                    currPointTarget = 0;
-                }
-                velocity = GetVelocityToTarget();
-            }
-            else
-            {
-                transform.Translate(velocity * Time.deltaTime);
-            }
+	void Awake() {
+		this.transform.position = this.PointA.position;
+	}
+
+    private void FixedUpdate() {
+		this.transform.position = (1f - progress) * this.PointA.position + progress * this.PointB.position;
+        if (this.isActive) {
+			if (this.waiting > 0f) {
+				this.waiting -= Time.fixedDeltaTime;
+			} else {
+				distance = Mathf.Max(0.1f, (this.PointA.position - this.PointB.position).magnitude);
+				progress += direction * platformSpeed * Time.fixedDeltaTime / distance;
+				if (progress <= 0) {
+					progress = 0f;
+					this.direction = 1;
+				}
+				if (progress >= 1) {
+					progress = 1f;
+					this.direction = -1;
+				}
+				if (progress == 1f || progress == 0f) {
+					if (this.mode == ElevatorMode.OneWay) {
+						this.isActive = false;
+					} else {
+						this.waiting = EndWaitTime;
+					}
+				}
+			}
         }
-
     }
 
     public override void OnActivate() {
-        isActive = true;
-        velocity = GetVelocityToTarget();
+		if (this.mode == ElevatorMode.OneWay) {
+			this.direction = 1;
+			this.isActive = true;
+		} else {
+			this.isActive = true;
+		}
     }
 
     public override void OnDeactivate() {
-        isActive = false;
-        velocity = Vector2.zero;
+		if (this.mode == ElevatorMode.OneWay) {
+			this.direction = -1;
+			this.isActive = true;
+		} else {
+			this.isActive = false;
+		}
     }
+}
 
-    private Vector3 GetVelocityToTarget() {
-        Vector3 dir = points[currPointTarget].position - transform.position;
-        dir.Normalize();
-        dir *= platformSpeed;
-        return dir;
-    }
+public enum ElevatorMode {
+	Repeating,
+	OneWay
 }
