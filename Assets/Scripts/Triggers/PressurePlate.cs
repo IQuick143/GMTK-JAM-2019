@@ -14,7 +14,7 @@ public class PressurePlate : Trigger
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("MovingCube"))
         {
             model.position += moveDown;
             active = true;
@@ -23,7 +23,7 @@ public class PressurePlate : Trigger
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("MovingCube"))
         {
             model.position -= moveDown;
             active = false;

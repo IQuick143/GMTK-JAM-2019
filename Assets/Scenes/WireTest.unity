@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc95e585fcf4f7c4da7efcc67a3f05ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shader: {fileID: -6465566751694194690, guid: e0be580acd223db46be2e864ff9ed0a5, type: 3}
   WireColour: {r: 0, g: 1, b: 0.3198843, a: 0}
   renderers:
   - {fileID: 226427478}
@@ -299,7 +300,7 @@ MonoBehaviour:
   - {fileID: 26195127}
 --- !u!114 &245870883 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8998169724730907714, guid: 5bc817dee44c73746b0fd5fd3aca4927,
+  m_CorrespondingSourceObject: {fileID: 2139675163, guid: 5bc817dee44c73746b0fd5fd3aca4927,
     type: 3}
   m_PrefabInstance: {fileID: 1172353795}
   m_PrefabAsset: {fileID: 0}
@@ -663,6 +664,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -8.59
       objectReference: {fileID: 0}
+    - target: {fileID: 8858526521056743453, guid: cec9ea5db83429c4d82852fefa800d4c,
+        type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 245870883}
+    - target: {fileID: 8858526521056743453, guid: cec9ea5db83429c4d82852fefa800d4c,
+        type: 3}
+      propertyPath: mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8858526520141989530, guid: cec9ea5db83429c4d82852fefa800d4c,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -682,16 +693,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8858526521056743453, guid: cec9ea5db83429c4d82852fefa800d4c,
-        type: 3}
-      propertyPath: trigger
-      value: 
-      objectReference: {fileID: 245870883}
-    - target: {fileID: 8858526521056743453, guid: cec9ea5db83429c4d82852fefa800d4c,
-        type: 3}
-      propertyPath: mode
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cec9ea5db83429c4d82852fefa800d4c, type: 3}
@@ -762,8 +763,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8998169724730907714, guid: 5bc817dee44c73746b0fd5fd3aca4927,
-        type: 3}
+    - target: {fileID: 2139675163, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
       propertyPath: wire
       value: 
       objectReference: {fileID: 245870882}
@@ -782,6 +782,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e68abcbe22f773745b87f77ae152f3ed, type: 2}
+    - target: {fileID: 8998169724730907714, guid: 5bc817dee44c73746b0fd5fd3aca4927,
+        type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 245870882}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
 --- !u!1001 &1214636548
