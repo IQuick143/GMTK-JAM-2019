@@ -22,7 +22,7 @@ public class SceneSwitcher : MonoBehaviour {
 	public IEnumerator LevelCompleted() {
 		//Fade out + story
 		yield return StartCoroutine(menu.InStory(currentSceneID));
-		currentSceneID = (currentSceneID+1) % SceneManager.sceneCount;
+		currentSceneID = (currentSceneID+1) % SceneManager.sceneCountInBuildSettings;
 		SceneManager.LoadScene(currentSceneID);
 		yield return StartCoroutine(menu.WaitForSkip());
 		//Fade in
