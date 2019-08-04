@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641335, b: 0.5748179, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -670,6 +670,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9bb4c540df227489e4abd1aa73cf7e, type: 3}
+--- !u!1 &424948210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5305468271498945918, guid: ad9bb4c540df227489e4abd1aa73cf7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 424948209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &424948211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424948210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Forcefield
+  PlayEvent: 5
+  StopEvent: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &455563361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,6 +1364,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f904c0d9c55a22b459bebb7effa6a234, type: 3}
+--- !u!1 &707446677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1252144031170572590, guid: f904c0d9c55a22b459bebb7effa6a234,
+    type: 3}
+  m_PrefabInstance: {fileID: 707446676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &707446678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707446677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Objective
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &770952412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,11 +1477,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 38944810}
     m_Modifications:
-    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
-        type: 3}
-      propertyPath: m_Parameters.m_DragCurve.scalar
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8998169724730907741, guid: 5bc817dee44c73746b0fd5fd3aca4927,
         type: 3}
       propertyPath: m_Name
@@ -1491,6 +1544,11 @@ PrefabInstance:
     - target: {fileID: 2139675163, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
       propertyPath: flipLever
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
+        type: 3}
+      propertyPath: m_Parameters.m_DragCurve.scalar
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8998169724730907715, guid: 5bc817dee44c73746b0fd5fd3aca4927,
         type: 3}
@@ -1567,7 +1625,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1838578038
 GameObject:
@@ -1929,6 +1987,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9bb4c540df227489e4abd1aa73cf7e, type: 3}
+--- !u!1 &5305468272230937199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5305468271498945918, guid: ad9bb4c540df227489e4abd1aa73cf7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5305468272230937198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5305468272230937200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5305468272230937199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Forcefield
+  PlayEvent: 5
+  StopEvent: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &7195562840869630419
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -318,6 +318,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68db59438556f84488ddcef350fcca2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &546628999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546628994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Lever
+  PlayEvent: 5
+  StopEvent: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &638752654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -983,7 +1006,8 @@ PrefabInstance:
       propertyPath: m_Parameters.m_DragCurve.scalar
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3851201159504198900, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
 --- !u!1 &1000926676
 GameObject:
@@ -1783,7 +1807,8 @@ PrefabInstance:
       propertyPath: m_Parameters.m_DragCurve.scalar
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3851201159504198900, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
 --- !u!1 &1732206350
 GameObject:
@@ -2204,6 +2229,29 @@ MonoBehaviour:
   - {fileID: 1000926678}
   - {fileID: 1571134460}
   - {fileID: 1756045292}
+--- !u!114 &2077938046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077938042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Lever
+  PlayEvent: 5
+  StopEvent: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &2139559310
 PrefabInstance:
   m_ObjectHideFlags: 0
