@@ -3,7 +3,7 @@
 public class RenderReplacementShaderToTexture : MonoBehaviour
 {
     [SerializeField]
-    Shader replacementShader;
+    Shader replacementShader = null;
 
     [SerializeField]
     RenderTextureFormat renderTextureFormat = RenderTextureFormat.ARGB32;

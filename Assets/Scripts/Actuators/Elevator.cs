@@ -9,11 +9,11 @@ public class Elevator : Actuator {
 	private float EndWaitTime = 0.5f;
 
 	[SerializeField]
-	private Transform PointA;
+	private Transform PointA = null;
 	[SerializeField]
-	private Transform PointB;
+	private Transform PointB = null;
 	[SerializeField]
-    private float platformSpeed;
+    private float platformSpeed = 3f;
 
     private bool isActive;
     private float progress = 0f;

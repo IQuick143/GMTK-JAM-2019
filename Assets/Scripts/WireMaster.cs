@@ -10,7 +10,7 @@ public class WireMaster : MonoBehaviour {
 	private Color WireColour = Color.red;
 
 	[SerializeField]
-	private MeshRenderer[] renderers;
+	private MeshRenderer[] renderers = null;
 
     // Start is called before the first frame update
     void Awake() {

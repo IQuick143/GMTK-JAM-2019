@@ -25,7 +25,7 @@ public class Player2 : MonoBehaviour
     //Assignable variables
     private Camera mainCamera;
     [SerializeField]
-    private Animator charAnimator;
+    private Animator charAnimator = null;
 
     //Variables
     private float speed = 0f;
