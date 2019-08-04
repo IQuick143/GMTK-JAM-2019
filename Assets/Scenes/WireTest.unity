@@ -299,7 +299,7 @@ MonoBehaviour:
   - {fileID: 26195127}
 --- !u!114 &245870883 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8998169724730907714, guid: 5bc817dee44c73746b0fd5fd3aca4927,
+  m_CorrespondingSourceObject: {fileID: 2139675163, guid: 5bc817dee44c73746b0fd5fd3aca4927,
     type: 3}
   m_PrefabInstance: {fileID: 1172353795}
   m_PrefabAsset: {fileID: 0}
@@ -690,7 +690,7 @@ PrefabInstance:
       objectReference: {fileID: 245870883}
     - target: {fileID: 8858526521056743453, guid: cec9ea5db83429c4d82852fefa800d4c,
         type: 3}
-      propertyPath: mode
+      propertyPath: EndWaitTime
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -782,6 +782,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e68abcbe22f773745b87f77ae152f3ed, type: 2}
+    - target: {fileID: 2139675163, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
+      propertyPath: wire
+      value: 
+      objectReference: {fileID: 245870882}
+    - target: {fileID: 2139675163, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
+      propertyPath: flipLever
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
 --- !u!1001 &1214636548

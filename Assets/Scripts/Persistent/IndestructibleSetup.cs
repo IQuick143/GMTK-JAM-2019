@@ -7,10 +7,13 @@ using UnityEngine;
 [RequireComponent(typeof(Settings))]
 [RequireComponent(typeof(SceneSwitcher))]
 public class IndestructibleSetup : MonoBehaviour {
+	private static IndestructibleSetup setup;
 	[SerializeField]
 	private LevelDataScriptableObject levelData;
 	// Start is called before the first frame update
 	void Awake() {
+		if (setup == null) setup = this;
+		if (setup != this) Destroy(this.gameObject);
 		Object.DontDestroyOnLoad(this.gameObject);
 		Menu menu = this.GetComponent<Menu>();
 		Pause pause = this.GetComponent<Pause>();

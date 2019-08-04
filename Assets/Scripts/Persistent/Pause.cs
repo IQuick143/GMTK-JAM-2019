@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(IndestructibleSetup))]
 public class Pause : MonoBehaviour {
 	public static Pause pause;
 	public bool paused = false;
@@ -9,7 +10,7 @@ public class Pause : MonoBehaviour {
 
 	void Awake() {
 		if (pause == null) pause = this;
-		if (pause != this) Destroy(this);
+		if (pause != this) return;
 	}
 
 	public void PauseGame() {
