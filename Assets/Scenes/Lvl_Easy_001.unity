@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641335, b: 0.5748179, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -120,12 +120,77 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &73099047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5305468271498945918, guid: ad9bb4c540df227489e4abd1aa73cf7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5305468272230937198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &73099053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73099047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Forcefield
+  PlayEvent: 5
+  StopEvent: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &353167588 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5677382926765310170, guid: 11c719a0b66a9694da31914de369684c,
     type: 3}
   m_PrefabInstance: {fileID: 664756339}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &353167589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353167588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Ambience
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &353167590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353167588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!114 &353167594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +412,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9bb4c540df227489e4abd1aa73cf7e, type: 3}
+--- !u!1 &652624572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1431498802079149425}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652624573}
+  m_Layer: 0
+  m_Name: Level changer (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &652624573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1431498802079149425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652624572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &664756339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -433,6 +528,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BackGroundColor.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677382926765310171, guid: 11c719a0b66a9694da31914de369684c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11c719a0b66a9694da31914de369684c, type: 3}
@@ -666,6 +766,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &868470104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1252144031170572590, guid: f904c0d9c55a22b459bebb7effa6a234,
+    type: 3}
+  m_PrefabInstance: {fileID: 2139559310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &868470110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868470104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Objective
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 4.5499997
+  OverrideMaxDistance: 20.5
 --- !u!1 &943424846
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,11 +906,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
-        type: 3}
-      propertyPath: m_Parameters.m_DragCurve.scalar
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8998169724730907741, guid: 5bc817dee44c73746b0fd5fd3aca4927,
         type: 3}
       propertyPath: m_Name
@@ -854,6 +978,11 @@ PrefabInstance:
       propertyPath: wire
       value: 
       objectReference: {fileID: 2077938043}
+    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
+        type: 3}
+      propertyPath: m_Parameters.m_DragCurve.scalar
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
 --- !u!1 &1000926676
@@ -1175,7 +1304,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571134458
 GameObject:
@@ -1363,6 +1492,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cec9ea5db83429c4d82852fefa800d4c, type: 3}
+--- !u!1 &1648046532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5305468271498945918, guid: ad9bb4c540df227489e4abd1aa73cf7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 638752654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1648046538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648046532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Forcefield
+  PlayEvent: 5
+  StopEvent: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &1685553844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1370,11 +1528,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
-        type: 3}
-      propertyPath: m_Parameters.m_DragCurve.scalar
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8998169724730907741, guid: 5bc817dee44c73746b0fd5fd3aca4927,
         type: 3}
       propertyPath: m_Name
@@ -1447,6 +1600,11 @@ PrefabInstance:
       propertyPath: wire
       value: 
       objectReference: {fileID: 546628995}
+    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
+        type: 3}
+      propertyPath: m_Parameters.m_DragCurve.scalar
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
 --- !u!1 &1732206350
@@ -2065,7 +2223,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f904c0d9c55a22b459bebb7effa6a234, type: 3}
 --- !u!114 &2139675163 stripped
 MonoBehaviour:
@@ -2273,7 +2432,7 @@ PrefabInstance:
     - target: {fileID: 4403318477750018982, guid: ad9bb4c540df227489e4abd1aa73cf7e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4403318477750018982, guid: ad9bb4c540df227489e4abd1aa73cf7e,
         type: 3}
