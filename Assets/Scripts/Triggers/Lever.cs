@@ -2,29 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Leaver : Trigger
-{
+public class Lever : Trigger {
     //Leaver on the right -> active (-30 º)
     //Leaver on the left -> inactive (30 º)
 
-    bool movingLeaver = false;
+    bool movingLever = false;
     private float rightAngle = -30f;
     private float leftAngle = 30f;
     public float turningSpeed = 250f;
     private float rotation = 30;
-    private Transform leaverModel;
+    private Transform leverModel;
 
     private void Start() {
-        leaverModel = transform.Find("Model");
+        leverModel = transform.Find("Model");
     }
 
     void Update() {
-        if (movingLeaver) {
+        if (movingLever) {
             if (active == true) {
                 float newRotation = rotation - turningSpeed * Time.deltaTime;
                 if (newRotation <= rightAngle) {
                     rotation = rightAngle;
-                    movingLeaver = false;
+                    movingLever = false;
                 }
                 else {
                     rotation = newRotation;
@@ -34,13 +33,13 @@ public class Leaver : Trigger
                 float newRotation = rotation + turningSpeed * Time.deltaTime;
                 if (newRotation >= leftAngle) {
                     rotation = leftAngle;
-                    movingLeaver = false;
+                    movingLever = false;
                 }
                 else {
                     rotation = newRotation;
                 }
             }
-            leaverModel.rotation = Quaternion.Euler(0f, 0f, rotation);
+            leverModel.rotation = Quaternion.Euler(0f, 0f, rotation);
         }
     }
 
@@ -50,20 +49,16 @@ public class Leaver : Trigger
             if (xVelocity > 0f) {
                 if (rotation != rightAngle) {
                     //TODO: Play leaver SFX here
-                    movingLeaver = true;
+                    movingLever = true;
                 }
-                if (!active) {
-                    active = true;
-                }
+                active = true;
             }
             else if (xVelocity < 0f) {
                 if (rotation != leftAngle) {
                     //TODO: Play leaver SFX here
-                    movingLeaver = true;
+                    movingLever = true;
                 }
-                if (active) {
-                    active = false;
-                }
+                active = false;
             }
         }
     }
