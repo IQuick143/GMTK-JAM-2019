@@ -332,6 +332,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9bb4c540df227489e4abd1aa73cf7e, type: 3}
+--- !u!1 &190826260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1252144031170572590, guid: f904c0d9c55a22b459bebb7effa6a234,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843980027}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &190826266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190826260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Objective
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 4.7499995
+  OverrideMaxDistance: 19.5
 --- !u!1001 &194954946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,6 +431,35 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8571630808815934167, guid: f904c0d9c55a22b459bebb7effa6a234, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f904c0d9c55a22b459bebb7effa6a234, type: 3}
+--- !u!1 &314871344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1252144031170572590, guid: f904c0d9c55a22b459bebb7effa6a234,
+    type: 3}
+  m_PrefabInstance: {fileID: 194954946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &314871345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314871344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Objective
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 4.7499995
+  OverrideMaxDistance: 19.5
 --- !u!1001 &526798722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -572,6 +630,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &935014244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5305468271498945918, guid: ad9bb4c540df227489e4abd1aa73cf7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 171321696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &935014246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935014244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Forcefield
+  PlayEvent: 5
+  StopEvent: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1170859044 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5677382926765310170, guid: 11c719a0b66a9694da31914de369684c,

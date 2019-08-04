@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641335, b: 0.5748179, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -380,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 5677382926765310169, guid: 11c719a0b66a9694da31914de369684c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5677382926765310169, guid: 11c719a0b66a9694da31914de369684c,
         type: 3}
@@ -619,6 +619,35 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791216117}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &894021714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1252144031170572590, guid: f904c0d9c55a22b459bebb7effa6a234,
+    type: 3}
+  m_PrefabInstance: {fileID: 1831197461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &894021715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894021714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Objective
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 4.7499995
+  OverrideMaxDistance: 19.5
 --- !u!1001 &964730662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -626,11 +655,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
-        type: 3}
-      propertyPath: m_Parameters.m_DragCurve.scalar
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8998169724730907741, guid: 5bc817dee44c73746b0fd5fd3aca4927,
         type: 3}
       propertyPath: m_Name
@@ -674,7 +698,7 @@ PrefabInstance:
     - target: {fileID: 8998169724730907712, guid: 5bc817dee44c73746b0fd5fd3aca4927,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8998169724730907712, guid: 5bc817dee44c73746b0fd5fd3aca4927,
         type: 3}
@@ -703,6 +727,11 @@ PrefabInstance:
       propertyPath: wire
       value: 
       objectReference: {fileID: 1754944782}
+    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
+        type: 3}
+      propertyPath: m_Parameters.m_DragCurve.scalar
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc817dee44c73746b0fd5fd3aca4927, type: 3}
 --- !u!1 &980765328
@@ -966,7 +995,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1754944780 stripped
 GameObject:
@@ -1368,7 +1397,7 @@ PrefabInstance:
     - target: {fileID: 901161766984568793, guid: 324be18c741ead147b7a6a474945ad3b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 901161766984568793, guid: 324be18c741ead147b7a6a474945ad3b,
         type: 3}
@@ -1526,7 +1555,7 @@ PrefabInstance:
     - target: {fileID: 7388660682199699913, guid: 880da99f347593447aae045324a6e370,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7388660682199699913, guid: 880da99f347593447aae045324a6e370,
         type: 3}
