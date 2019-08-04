@@ -2,6 +2,8 @@
 using UnityEngine;
 
 public abstract class Trigger : MonoBehaviour {
+	[SerializeField]
+	protected WireMaster wire;
 	protected List<Actuator> triggeredActuators;
 	private bool _active = false;
 
@@ -16,7 +18,6 @@ public abstract class Trigger : MonoBehaviour {
 				UpdateGizmos();
 				UpdateWire();
 			}
-			
 		}
 		get {
 			return _active;
@@ -36,12 +37,10 @@ public abstract class Trigger : MonoBehaviour {
 	}
 
 	void UpdateWire() {
-		//TODO: WIRE MECHANICS
+		if (wire != null) wire.SetState(this._active); 
 	}
 
 	public void AddActuator(Actuator a) {
 		this.triggeredActuators.Add(a);
 	}
-
-	//void OnCollisionEnter2D();
 }
