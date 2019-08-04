@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(IndestructibleSetup))]
 public class SceneSwitcher : MonoBehaviour {
-	private static SceneSwitcher switcher;
+	public static SceneSwitcher switcher;
 	private int currentSceneID = 0;
 	public Menu menu;
 
@@ -15,7 +15,15 @@ public class SceneSwitcher : MonoBehaviour {
 		menu.LevelLoaded(currentSceneID);
 	}
 
-	public static void OnLevelCompleted() {
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetLevel();
+        }
+    }
+
+    public static void OnLevelCompleted() {
 		SceneSwitcher.switcher.StartCoroutine(SceneSwitcher.switcher.LevelCompleted());
 	}
 

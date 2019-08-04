@@ -78,6 +78,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		if (this.transform.position.y < -20f) SceneSwitcher.switcher.ResetLevel();
         this.speed = rb.velocity.x;
 		this.falling = rb.velocity.y < -2.5f;
 

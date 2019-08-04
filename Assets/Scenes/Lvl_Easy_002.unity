@@ -660,6 +660,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lever
       objectReference: {fileID: 0}
+    - target: {fileID: 588100488421808820, guid: 5bc817dee44c73746b0fd5fd3aca4927,
+        type: 3}
+      propertyPath: m_Parameters.m_DragCurve.scalar
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8998169724730907712, guid: 5bc817dee44c73746b0fd5fd3aca4927,
         type: 3}
       propertyPath: m_LocalPosition.x
