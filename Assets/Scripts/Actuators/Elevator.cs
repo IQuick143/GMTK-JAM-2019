@@ -27,10 +27,11 @@ public class Elevator : Actuator {
 
     private void FixedUpdate() {
 		this.transform.position = (1f - progress) * this.PointA.position + progress * this.PointB.position;
+		if (this.waiting > 0f) {
+			this.waiting -= Time.fixedDeltaTime;
+		}
         if (this.isActive) {
-			if (this.waiting > 0f) {
-				this.waiting -= Time.fixedDeltaTime;
-			} else {
+			if (this.waiting <= 0f) {
 				distance = Mathf.Max(0.1f, (this.PointA.position - this.PointB.position).magnitude);
 				progress += direction * platformSpeed * Time.fixedDeltaTime / distance;
 				if (progress <= 0) {
