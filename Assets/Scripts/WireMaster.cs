@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WireMaster : MonoBehaviour {
-	private static Shader shader;
+	[SerializeField]
+	private Shader shader;
 	private Material material;
 
 	[SerializeField]
@@ -12,14 +13,11 @@ public class WireMaster : MonoBehaviour {
 	[SerializeField]
 	private MeshRenderer[] renderers = null;
 
-    // Start is called before the first frame update
-    void Awake() {
-        if (shader == null) {
-			shader = Shader.Find("Shader Graphs/WireShader");
-		}
+	// Start is called before the first frame update
+	void Awake() {
 		this.material = new Material(shader);
 		this.material.SetColor("_WireColour", WireColour);
-    }
+	}
 
 	void Start() {
 		for (int i = 0; i < renderers.Length; i++) {
