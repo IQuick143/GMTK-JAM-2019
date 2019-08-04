@@ -1,17 +1,17 @@
 ﻿Shader "Hidden/Roystan/Outline Post Process"
 {
-    SubShader
-    {
-        Cull Off ZWrite Off ZTest Always
+	SubShader
+	{
+		Cull Off ZWrite Off ZTest Always
 
-        Pass
-        {
+		Pass
+		{
 			// Custom post processing effects are written in HLSL blocks,
 			// with lots of macros to aid with platform differences.
 			// https://github.com/Unity-Technologies/PostProcessing/wiki/Writing-Custom-Effects#shader
-            HLSLPROGRAM
-            #pragma vertex Vert
-            #pragma fragment Frag
+			HLSLPROGRAM
+			#pragma vertex Vert
+			#pragma fragment Frag
 			#include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"
 
 			TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
@@ -19,7 +19,7 @@
 			// to be in the 0...1 range.
 			TEXTURE2D_SAMPLER2D(_CameraNormalsTexture, sampler_CameraNormalsTexture);
 			TEXTURE2D_SAMPLER2D(_CameraDepthTexture, sampler_CameraDepthTexture);
-        
+		
 			// Data pertaining to _MainTex's dimensions.
 			// https://docs.unity3d.com/Manual/SL-PropertiesInPrograms.html
 			float4 _MainTex_TexelSize;
@@ -140,7 +140,7 @@
 
 				return alphaBlend(edgeColor, color);
 			}
-            ENDHLSL
-        }
-    }
+			ENDHLSL
+		}
+	}
 }

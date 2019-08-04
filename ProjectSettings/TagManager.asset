@@ -16,6 +16,8 @@ TagManager:
   - MovingPlatform
   - Player
   - 
+  - OneWay
+  - Wall
   - 
   - 
   - 

@@ -5,8 +5,6 @@ using UnityEngine;
 public class OneWay : MonoBehaviour {
 	[SerializeField]
 	private GameObject platform = null;
-	[SerializeField]
-	private GameObject backPlate = null;
 
 	[SerializeField]
 	private BoxCollider2D trigger = null;
