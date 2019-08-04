@@ -19,6 +19,8 @@ public class Menu : MonoBehaviour {
 	[SerializeField]
 	private Canvas ingameMenu;
 	[SerializeField]
+	private Text levelNameText;
+	[SerializeField]
 	private Canvas pauseMenu;
 	[SerializeField]
 	private CanvasGroup levelFade;
@@ -33,6 +35,9 @@ public class Menu : MonoBehaviour {
 	private bool skipped = false;
 	private Menu menu;
 
+	[SerializeField]
+	private LevelDataScriptableObject levelData;
+
 	// Start is called before the first frame update
 	void Start() {
 		if (menu == null) menu = this;
@@ -42,11 +47,6 @@ public class Menu : MonoBehaviour {
 		this.pauseMenu.gameObject.SetActive(false);
 
 		this.transitionMenu.gameObject.SetActive(false);
-	}
-
-	// Update is called once per frame
-	void Update() {
-		
 	}
 
 	public IEnumerator Fade() {
@@ -70,6 +70,11 @@ public class Menu : MonoBehaviour {
 
 	public IEnumerator LevelLoaded(int levelID) {
 		Pause.pause.UnPauseGame();
+		try {
+			this.levelNameText.text = this.levelData[levelID].levelName;
+		} catch (System.Exception) {
+			this.levelNameText.text = "";
+		}
 		yield return StartCoroutine(UnFade());
 	}
 
@@ -86,7 +91,11 @@ public class Menu : MonoBehaviour {
 	public IEnumerator InStory(int levelID) {
 		this.transitionMenu.gameObject.SetActive(true);
 		this.transitionMenu.gameObject.SetActive(true);
-		this.transitionMenuStoryText.text = "PLACEHOLDER";
+		try {
+			this.transitionMenuStoryText.text = this.levelData[levelID].story;
+		} catch (System.Exception) {
+			this.transitionMenuStoryText.text = "William Shakespeare once said: An SSL error has occured and a secure connection to the server cannot be made.";
+		}
 		yield return StartCoroutine(Fade());
 	}
 
