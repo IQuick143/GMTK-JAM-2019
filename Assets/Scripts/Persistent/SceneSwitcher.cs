@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(IndestructibleSetup))]
 public class SceneSwitcher : MonoBehaviour {
-	private static SceneSwitcher switcher;
+	public static SceneSwitcher switcher;
 	private int currentSceneID = 0;
 	public Menu menu;
 

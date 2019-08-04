@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3900953378608159959}
   - component: {fileID: 3900953378608159953}
   - component: {fileID: 3900953378608159958}
-  - component: {fileID: 1146828710557061493}
+  - component: {fileID: 8884481839991745200}
   m_Layer: 8
   m_Name: Platform
   m_TagString: Untagged
@@ -81,7 +81,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1146828710557061493
+--- !u!114 &8884481839991745200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,13 +90,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3900953378608159956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 402742276b25bd342a339302144f43e4, type: 3}
+  m_Script: {fileID: 11500000, guid: f6db50f42929989409f13d6a8576c181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 0}
-  point0: {fileID: 3900953379589491285}
-  point1: {fileID: 3900953380359437464}
-  platformSpeed: 2.5
+  overrideTrigger: 0
+  mode: 1
+  EndWaitTime: 0.5
+  PointA: {fileID: 3900953379589491285}
+  PointB: {fileID: 3900953380359437464}
+  platformSpeed: 3
 --- !u!1 &3900953379107222205
 GameObject:
   m_ObjectHideFlags: 0
