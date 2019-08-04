@@ -135,7 +135,6 @@ GameObject:
   m_Component:
   - component: {fileID: 901161766984568793}
   - component: {fileID: 901161766984568798}
-  - component: {fileID: 3242522682384272184}
   - component: {fileID: 901161766984568799}
   - component: {fileID: 4089664796915717231}
   m_Layer: 0
@@ -170,32 +169,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 442125f967e7dd9459834aff03752272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxSpeed: 3
-  MinSpeed: 0.125
-  Acceleration: 10
-  Deceleration: 12
-  MinMouseDist: 0.1
-  MaxMouseDist: 1
-  DistanceAccel: 0
-  FacingRightAngle: 91
-  FacingLeftAngle: 269
-  RotationTime: 0.25
-  charAnimator: {fileID: 1672304165471944027}
-  movingPlatformMask:
-    serializedVersion: 2
-    m_Bits: 256
---- !u!114 &3242522682384272184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901161766984568792}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 016f73c0dbee8e54aa12a5ac6ba7ba92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSpeed: 3
