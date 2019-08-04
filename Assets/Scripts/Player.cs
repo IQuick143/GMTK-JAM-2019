@@ -47,6 +47,10 @@ public class Player : MonoBehaviour {
     private Vector3 groundOffset = new Vector3(0f, 0f, 0f);
     public LayerMask movingPlatformMask;
 
+    //Slopes
+    LayerMask slopeMask;
+    float maxSlopeAngle = 80f;
+
 	void Start() {
         mainCamera = Camera.main;
         DistanceAccel = MaxSpeed / (MaxMouseDist - MinMouseDist);
@@ -113,7 +117,19 @@ public class Player : MonoBehaviour {
 		this.walking = Mathf.Abs(this.speed) > 0.05f;
 		this.turning = this.walking && Mathf.Sign(this.speed) != Mathf.Sign(this.targetSpeed) && Mathf.Sign(this.targetSpeed) != 0;
 
-        rb.velocity = new Vector2(speed, rb.velocity.y);
+        Vector3 velocity = Vector3.zero;
+        float maxSpeed = 5f;
+        if (Input.GetKey(KeyCode.LeftArrow)) {
+            velocity.x -= maxSpeed;
+        }
+        if (Input.GetKey(KeyCode.RightArrow)) {
+            velocity.x += maxSpeed;
+        }
+        if (velocity.x != 0f) {
+            HorizontalCollisions(ref velocity);
+        }
+
+        rb.velocity = velocity;
 
 		//Rotate character
 		if (!((this.characterRotation == 1 && this.facingRight) || (this.characterRotation == 0 && !this.facingRight))) {
@@ -148,5 +164,39 @@ public class Player : MonoBehaviour {
         if (col == null && transform.parent != null) {
             transform.parent = null;
         }
+    }
+
+    private void HorizontalCollisions(ref Vector3 velocity) {
+        float directionX = Mathf.Sign(velocity.x);
+        float rayLength = Mathf.Abs(velocity.x);
+        float raySpacing = 0.5f;
+        float skinWidth = 0.5f;
+        int horizontalRayCount = 3;
+
+        for (int i = 0; i < horizontalRayCount; ++i) {
+            Vector2 rayOrigin = (Vector2)transform.position + Vector2.right * directionX * skinWidth;
+            rayOrigin += Vector2.up * raySpacing * i;
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * directionX, rayLength, slopeMask);
+            Debug.DrawRay(rayOrigin, Vector2.right * directionX * rayLength, Color.red);
+            if(hit) {
+
+                float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+                if (i == 0 && slopeAngle <= maxSlopeAngle) {
+                    ClimbSlope(ref velocity, slopeAngle);
+                }
+
+                //velocity.x = (hit.distance - skinWidth) * directionX;
+                //rayLength = hit.distance;
+                //collisions.left = directionX == -1;
+                //collisions.righ = directionX == 1;
+            }
+        }
+        //TODO: Maybe we don't need the for loop if we just have to check the feet raycast
+    }
+
+    private void ClimbSlope(ref Vector3 velocity, float slopeAngle) {
+        float moveDistance = Mathf.Abs(velocity.x);
+        velocity.y = Mathf.Sin(slopeAngle) * Mathf.Deg2Rad * moveDistance;
+        velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(velocity.x);
     }
 }
