@@ -16,8 +16,10 @@ public class Lever : Trigger {
 	private float turningSpeed = 250f;
 	private float rotation = 30;
 	private Transform leverModel;
+    private ParticleSystem particle;
 
 	private void Start() {
+        particle = transform.GetComponentInChildren<ParticleSystem>();
 		leverModel = transform.Find("Model");
 		if (flipLever) {
 			this.rotation = this.rightAngle;
@@ -59,14 +61,16 @@ public class Lever : Trigger {
 			if (xVelocity != 0f) {
 				if (xVelocity > 0f) {
 					if (rotation != rightAngle) {
+                        particle.Play();
 						//TODO: Play lever SFX here
 						movingLever = true;
 					}
 					active = !flipLever;
 				} else {
 					if (rotation != leftAngle) {
-						//TODO: Play lever SFX here
-						movingLever = true;
+                        particle.Play();
+                        //TODO: Play lever SFX here
+                        movingLever = true;
 					}
 					active = flipLever;
 				}
