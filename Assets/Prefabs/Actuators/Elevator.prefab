@@ -208,7 +208,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8858526521056743451}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -234,10 +234,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 0}
-  points:
-  - {fileID: 8858526520141989530}
-  - {fileID: 8858526521444577367}
+  mode: 0
+  PointA: {fileID: 8858526520141989530}
+  PointB: {fileID: 8858526521444577367}
   platformSpeed: 5
+  velocity: 3
 --- !u!1 &8858526521444577366
 GameObject:
   m_ObjectHideFlags: 0
