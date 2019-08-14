@@ -23,12 +23,12 @@ MonoBehaviour:
     story: I feel lonely... It's like I'm the only one in this universe.
   - levelName: Double The Trouble
     story: Riding these blue fields is fun! If only I had a friend...
-  - levelName: Vertical Reacharound
-    story: Venturing in both dimensions is an amazing experience. But I remember being
-      able to move in 3D from my home.
   - levelName: Pushy Cubes and Pressing Issues
     story: I feel like I'm understanding the world. Sadly feelings do not seem to
       help.
+  - levelName: Vertical Reacharound
+    story: Venturing in both dimensions is an amazing experience. But I remember being
+      able to move in 3D from my home.
   - levelName: The Only One
     story: I was trying to find a way home... but now I realize that there's only
       one way...
